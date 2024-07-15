@@ -1,2 +1,2 @@
-buy.html:從console可以看到跟網站互動的數字紀錄
-root_tutorial.html:預計做成某款桌遊的互動式教學網站
+- buy.html:從console可以看到跟網站互動的數字紀錄
+- root_tutorial.html:預計做成某款桌遊的互動式教學網站
