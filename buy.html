@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>買熊沼</title>
+        <style>
+            button{
+                width:200px;
+                font-size: 25px;
+                margin-right: 10px;
+            }
+            p{
+                font-size: 25px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            img{
+                width: 300px;
+                display: block;
+                margin-top: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>歡迎來到快樂娃娃區</h1>
+        <button onclick="
+            showCart();
+            
+            // ===
+            if (cart.totalPrice >= 500){
+                // console.log('你不能再買了');
+            }
+             
+        ">購物車總額
+        </button>
+
+        <button onclick="
+            cart.totalPrice = 0;
+            cart.productNum = 0;
+            cart.product1.num = 0;
+            cart.product2.num = 0;
+            console.log('購物車已清空');
+            showCart();
+            ">
+            清空購物車
+        </button>
+
+        <img src="img/bear.jpg"></img>
+        <p>$999</p>
+        <button onclick="
+            cart.totalPrice += 999;
+            cart.productNum ++;
+            cart.product1.num ++;
+            showCart();
+            ">加入購物車
+        </button>
+
+        <img src="img/nuo.jpg"></img>
+        <p>$1000</p>
+        <button onclick="
+            cart.totalPrice += 1000;
+            cart.productNum ++;
+            cart.product2.num ++;
+            showCart();
+            ">
+            加入購物車
+        </button>
+
+        <script>
+            let cart ={
+                productNum: 0,
+                product1: {
+                    num: 0,
+                    name: "熊",
+                    price: 999
+                },
+                product2: {
+                    num: 0,
+                    name: "沼王",
+                    price: 1000
+                },
+                totalPrice: 0
+            };
+            
+            function showCart(){
+                console.log(`目前總購買量為: ${cart.productNum} 樣商品`);
+                console.log(`目前${cart.product1.name}為: ${cart.product1.num} 隻`);
+                console.log(`目前${cart.product2.name}為: ${cart.product2.num} 隻`);
+                console.log(`目前累積金額為: ${cart.totalPrice} 元`);
+            }
+        </script>
+    </body>
+</html>
